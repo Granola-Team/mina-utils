@@ -1,12 +1,12 @@
 #!/usr/bin/env sh
 
-# Unzip today's Berkeley archive dump
+# Unzip today's Mainnet archive dump
 
 dumps=""
 
 for item in *; do
   if [[ -d $item ]]; then
-    if [[ $item == "berkeley_dumps" ]]; then
+    if [[ $item == "mainnet_dumps" ]]; then
       dumps+=0;
       break;
     fi
@@ -14,13 +14,13 @@ for item in *; do
 done
 
 if [[ $dumps == "" ]]; then
-  mkdir berkeley_dumps;
+  mkdir mainnet_dumps;
 fi
 
-cd berkeley_dumps
+cd mainnet_dumps
 
 _date=$(date -I)
-pattern="berkeley-archive-dump-${_date}_*.sql.tar.gz"
+pattern="mainnet-archive-dump-${_date}_*.sql.tar.gz"
 
 found=""
 
@@ -33,8 +33,8 @@ for item in *; do
 done
 
 if [[ $found == "" ]]; then
-  echo "Have you gotten today's Berkeley dump?";
-  echo "Maybe try: sh get_todays_berkeley_dump.sh";
+  echo "Have you gotten today's Mainnet dump?";
+  echo "Maybe try: sh get_todays_mainnet_dump.sh";
 else
   echo "Success!";
 fi
