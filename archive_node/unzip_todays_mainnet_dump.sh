@@ -2,22 +2,7 @@
 
 # Unzip today's Mainnet archive dump
 
-dumps=""
-
-for item in *; do
-  if [[ -d $item ]]; then
-    if [[ $item == "mainnet_dumps" ]]; then
-      dumps+=0;
-      break;
-    fi
-  fi
-done
-
-if [[ $dumps == "" ]]; then
-  mkdir mainnet_dumps;
-fi
-
-cd mainnet_dumps
+echo "Unzipping..."
 
 _date=$(date -I)
 pattern="mainnet-archive-dump-${_date}_*.sql.tar.gz"
@@ -38,5 +23,3 @@ if [[ $found == "" ]]; then
 else
   echo "Success!";
 fi
-
-cd ..

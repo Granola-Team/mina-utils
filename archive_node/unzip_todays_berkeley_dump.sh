@@ -2,22 +2,7 @@
 
 # Unzip today's Berkeley archive dump
 
-dumps=""
-
-for item in *; do
-  if [[ -d $item ]]; then
-    if [[ $item == "berkeley_dumps" ]]; then
-      dumps+=0;
-      break;
-    fi
-  fi
-done
-
-if [[ $dumps == "" ]]; then
-  mkdir berkeley_dumps;
-fi
-
-cd berkeley_dumps
+echo "Unzipping..."
 
 _date=$(date -I)
 pattern="berkeley-archive-dump-${_date}_*.sql.tar.gz"
@@ -38,5 +23,3 @@ if [[ $found == "" ]]; then
 else
   echo "Success!";
 fi
-
-cd ..
