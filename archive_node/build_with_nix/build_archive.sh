@@ -1,22 +1,24 @@
 #!/usr/bin/env bash
 
-# Run from the Mina project root
-
-# 1. install nix
+# First
+# 1. install nix with flakes
 # 2. set up mina in nix registry
 
 # start nix dev shell for mina
 nix develop mina
 
 # build
-echo "Building Mina daemon..."
+echo "Building Mina daemon"
 dune build src/app/cli/src/mina.exe
 
-echo "Building archive process..."
+echo "Building archive process"
 dune build src/app/archive/archive.exe
 
+echo "Building archive blocks"
+dune build src/app/archive_blocks/archive_blocks.exe
+
 DIR_NAME=$( dirname -- "${BASH_SOURCE[0]}")
-SCRIPT_DIR=$( cd -- $DIR_NAME &> /dev/null && pwd )
+MINA_ROOT=$( cd -- $DIR_NAME &> /dev/null && pwd )
 
 # suggest
 echo "Success!";
