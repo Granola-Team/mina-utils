@@ -1,4 +1,7 @@
 berkeley_dumps/
 mainnet_dumps/
 
+berkeley_blocks/
+mainnet_blocks/
+
 out_messages/
