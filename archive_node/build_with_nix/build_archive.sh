@@ -4,6 +4,7 @@
 # 1. install nix with flakes
 # 2. set up mina in nix registry
 
+
 # start nix dev shell for mina
 nix develop mina
 
