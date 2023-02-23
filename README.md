@@ -1,10 +1,15 @@
 # Mina Utils
 
-Helpful tools for the Mina Protocol
+Helpful tools for working with the Mina Protocol
 
 ## Archive Node
 
-- scripts for downloading and unzipping today's archive dumps
-  - Berkeley
-  - Mainnet
-- scripts for building the daemon and the archive process
+Scripts for 
+
+- downloading and unzipping today's archive dumps
+
+- building archive tools
+  - Berkeley & Mainnet
+  - `mina-archive`
+  - `mina-archive-blocks`
+  - `missing-blocks-auditor`
