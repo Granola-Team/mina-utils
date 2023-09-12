@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-# Load db with precomputed blocks from ./berkeley
+# Load db with precomputed blocks from ./mainnet
 # 
 # This requires a running archive process, postgres process
 # This must be run from the root of the mina repo after
@@ -9,10 +9,10 @@
 ARCHIVE_BLOCKS=_build/default/src/app/archive_blocks/archive_blocks.exe
 POSTGRES_URI=postgres://postgres:password@localhost:5432/archive
 
-echo "Loading precomputed block with --archive-uri"
+echo "Loading precomputed blocks with --archive-uri"
 echo ${POSTGRES_URI}
 
-find ./berkeley -name "*.json" | xargs -I \
+find ./mainnet -name "*.json" | xargs -I \
   % ${ARCHIVE_BLOCKS} \
     --precomputed \
   % --archive-uri ${POSTGRES_URI} \

@@ -19,7 +19,7 @@ done
 
 if [[ $found == "" ]]; then
   echo "Have you gotten today's Mainnet dump?";
-  echo "Maybe try: sh get_todays_mainnet_dump.sh";
+  echo "Maybe try: ./get_todays_mainnet_dump.sh";
 else
   echo "Success!";
 fi

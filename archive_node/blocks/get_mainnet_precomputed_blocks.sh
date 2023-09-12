@@ -21,6 +21,6 @@ cd mainnet
 
 gsutil -m cp -n "gs://mina_network_block_data/mainnet-*.json" .
 
-sh unzip_mainnet_blocks.sh
+sh load_mainnet_precomputed_blocks.sh
 
 cd ..
