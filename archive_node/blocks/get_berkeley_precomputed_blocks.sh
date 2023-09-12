@@ -21,6 +21,6 @@ cd berkeley
 
 gsutil -m cp -n "gs://mina_network_block_data/berkeley-*.json" .
 
-sh berkeley_load_precomputed_blocks.sh
+sh load_berkeley_precomputed_blocks.sh
 
 cd ..

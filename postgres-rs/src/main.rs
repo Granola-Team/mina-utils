@@ -10,6 +10,8 @@ pub struct BlockSummary {
     pub parent_hash: String,
 }
 
+const POSTGRES_URI: &'static str = "postgres://postgres:password@localhost:5432/archive";
+
 fn parse(row: Row) -> Option<BlockSummary> {
     row.get::<usize, Option<i32>>(1)
         .map(|parent_id| BlockSummary {
@@ -24,7 +26,7 @@ fn parse(row: Row) -> Option<BlockSummary> {
 
 fn main() -> Result<(), Error> {
     let mut db =
-        Client::connect("postgres://postgres:password@localhost:5432/archive", NoTls).unwrap();
+        Client::connect(POSTGRES_URI, NoTls).unwrap();
 
     let rows = db
         .query(
@@ -48,7 +50,7 @@ fn main() -> Result<(), Error> {
 
         if !children.is_empty() {
             println!("----- Parent {pid} -----");
-            println!("{:#?}", children);
+            println!("{children:#?}");
         }
     }
 
