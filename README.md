@@ -1,18 +1,10 @@
-# Mina Utils
+# mina-utils
 
-Helpful tools for working with the Mina Protocol
+Helpful scripts for working with the Mina Protocol
 
-## Archive Node
+- [mip voting results](./scripts/voting-results)
+- [keypair generation](./scripts)
+- [mina daemon](./scripts)
+- [archive node](./archive_node)
 
-Scripts for archive node related activities
-
-- downloading and unzipping today's archive dumps
-
-- building archive tools
-  - Berkeley & Mainnet
-  - `mina`
-  - `archive`
-  - `archive-blocks`
-  - `extract-blocks`
-  - `missing-blocks-auditor`
-  - `replayer`
+and various [notes](./notes/)
